@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "GhostSplit.gg Chat Theme for Twitch.tv",
+  "version": "0.1.0",
+  "description": "Restyles native twitch.tv chat to match the GhostSplit chat look. Bits and channel-points UI are preserved.",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.twitch.tv/*"],
+      "css": ["content/twitch-chat.css"],
+      "run_at": "document_start",
+      "all_frames": false
+    },
+    {
+      "matches": ["*://*.twitch.tv/*"],
+      "js": ["content/badges.js", "content/toggle.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
