@@ -4,6 +4,13 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 follows [Semantic Versioning](https://semver.org/).
 
+## [0.2.1] — 2026-05-05
+
+### Changed
+- `manifest.json` `description` shortened from 137 to 112 characters so
+  it fits Chrome Web Store's 132-character hard limit on the field. No
+  feature changes vs 0.2.0.
+
 ## [0.2.0] — 2026-05-05
 
 ### Added
