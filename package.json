@@ -28,8 +28,8 @@
   ],
   "scripts": {
     "lint": "node scripts/lint.mjs",
-    "build": "npx --yes web-ext build --source-dir . --artifacts-dir ./dist --overwrite-dest --ignore-files icons/generate.mjs icons/ghost-icon.svg package.json README.md LICENSE .gitignore",
-    "icons": "node icons/generate.mjs"
+    "build": "npx --yes web-ext build --source-dir . --artifacts-dir ./dist --overwrite-dest --ignore-files \"scripts\" \"scripts/**\" \"dist\" \"dist/**\" \".github\" \".github/**\" package.json README.md CHANGELOG.md LICENSE .gitignore",
+    "icons": "node ../generate-icons.mjs ./icons"
   },
   "engines": {
     "node": ">=18"
