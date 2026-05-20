@@ -4,6 +4,22 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project
 follows [Semantic Versioning](https://semver.org/).
 
+## [0.3.4] — 2026-05-21
+
+### Fixed
+- **twitch.tv host permission shown as "Optional" on Firefox after
+  disable/enable**. In Manifest V3 (Firefox ≥109), host permissions
+  declared implicitly via `content_scripts.matches` are treated as
+  user-grantable rather than auto-granted, which means a disable/enable
+  cycle could leave the extension without site access until the user
+  re-toggled site access on `about:addons` by hand. Added an explicit
+  `host_permissions: ["*://*.twitch.tv/*"]` so Firefox auto-grants
+  twitch.tv access at install/enable (the user can still revoke via
+  Site Access controls if they want). Mirrored on Chromium for parity;
+  Chromium already auto-granted via `matches` but the explicit
+  `host_permissions` declaration is the canonical MV3 pattern and
+  surfaces correctly in the install prompt.
+
 ## [0.3.3] — 2026-05-21
 
 ### Fixed
